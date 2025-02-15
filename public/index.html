@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatroom</title>
+    <link rel="stylesheet" href="global.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <h1>South Devs Chat</h1>
+        <div class="room-selection">
+            <label for="username">Enter Username:</label>
+            <input type="text" id="username" placeholder="Username">
+            <button class="join-chat">Join Chat</button>
+            <label for="room-name">Enter Room Name:</label>
+            <input type="text" id="room-name" placeholder="Room Name">
+        
+            <button id="join-room">Join Room</button>
+        </div>
+        
+        <div class="user-list">
+            <h3>Active Users</h3>
+            <div class="users">
+                <ul></ul>
+            </div>
+        </div>
+    </aside>
+
+    <section class="chat-container">
+        <div class="chat-box">
+            
+        </div>
+        <div class="user-input">
+            <input type="text" class="message-input" placeholder="Write a message...">
+            <button class="send-btn">Send</button>
+        </div>
+
+    <!-- used the cdn here -->
+    <script src="https://cdn.socket.io/4.8.1/socket.io.min.js" integrity="sha384-mkQ3/7FUtcGyoppY6bz/PORYoGqOl7/aSUMn2ymDOJcapfS6PHqxhRTMh1RR0Q6+" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+</body>
+</html>
