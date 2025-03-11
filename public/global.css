@@ -1,27 +1,28 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     font-family: 'Courier New', Courier, monospace;
-    /* font-weight: 500; */
     background-color: #f4f4f4;
     display: flex;
     position: relative;
     height: 100vh;
+    width: 100%; /* Ensure body takes up the full width */
+    overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
-input{
+input {
     display: block;
 }
 
-ul{
+ul {
     list-style: none;
 }
 
-.sidebar{
+.sidebar {
     background-color: #007bff;
     color: #fff;
     width: 350px;
@@ -29,25 +30,28 @@ ul{
     display: flex;
     flex-direction: column;
     border-right: 2px solid #fff;
+    box-sizing: border-box; /* Ensure padding is included in the width */
 }
-.sidebar h1{
+
+.sidebar h1 {
     text-align: center;
     font-size: 30px;
     font-weight: 600;
     margin-bottom: 20px;
 }
 
-.room-selection{
+.room-selection {
     width: auto;
 }
-.room-selection label{
+
+.room-selection label {
     margin-bottom: 10px;
     font-size: 18px;
     font-weight: 600;
     display: block;
 }
 
-.room-selection input{
+.room-selection input {
     padding: 6px;
     border: none;
     outline: none;
@@ -68,32 +72,33 @@ ul{
     cursor: pointer;
 }
 
-.join-chatp{
+.join-chatp {
     text-align: center;
 }
 
-.room-selection #join-room:hover, .join-chat:hover{
+.room-selection #join-room:hover, .join-chat:hover {
     transition: all;
     transition-duration: 1s;
     background: #1c354f;
     color: #f1f1f1;
 }
-.users{
+
+.users {
     padding-top: 5px;
     padding-left: 10px;
 }
 
-.users ul li{
+.users ul li {
     padding-top: 5px;
 }
 
-.user-list > .users > ul{
+.user-list > .users > ul {
     font-size: 25px;
     font-weight: 600;
     color: #eeebeb;
 }
 
-.chat-container{
+.chat-container {
     flex: 1;
     background-color: #fff;
     padding: 10px;
@@ -101,33 +106,35 @@ ul{
     flex-direction: column;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Ensure padding is included in width */
 }
 
-.chat-container .chat-box{
+.chat-container .chat-box {
     flex: 1;
     padding: 10px;
     border-bottom: 1px solid #ddd;
     overflow-y: auto;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
 }
 
-.message{
- display: flex;
- align-items: center;
- padding: 8px;
- margin: 5px;
- border-radius: 8px;
- max-width: 70%;
- position: relative;
+.message {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    margin: 5px;
+    border-radius: 8px;
+    max-width: 70%;
+    position: relative;
 }
-.message div span{
+
+.message div span {
     text-align: start;
     font-size: 18px;
     font-weight: 600;
 }
 
-.message div p{
+.message div p {
     font-size: 18px;
     font-weight: 500;
 }
@@ -139,33 +146,33 @@ ul{
     margin-right: 10px;
 }
 
-.message.other-user{
+.message.other-user {
     background: #c1ec9b;
     align-self: flex-start;
 }
 
-.message.me{
+.message.me {
     background-color: #f4f4f4;
     align-self: flex-end;
 }
 
-.user-input{
+.user-input {
     display: flex;
-            padding: 10px;
-            background: #f9f9f9;
+    padding: 10px;
+    background: #f9f9f9;
 }
 
-.user-input input{
+.user-input input {
     flex: 1;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 4px;
 }
 
-.user-input button{
+.user-input button {
     margin-left: 10px;
     padding: 18px;
-    font-size:  18px;
+    font-size: 18px;
     border: none;
     background: #007bff;
     color: white;
@@ -176,7 +183,58 @@ ul{
 .user-input button:hover {
     background: #0056b3;
 }
-/* background: #e1ffc7;
-background: #f9f9f9;
-background: #007bff;
-background-color: #f4f4f4; */
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        height: auto;
+        width: 100%; /* Ensure body width is set correctly */
+        overflow-x: hidden; /* Prevent horizontal overflow */
+    }
+
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 2px solid #fff;
+        padding: 10px;
+        box-sizing: border-box; /* Ensure padding is included in width */
+        margin-bottom: 10px;
+    }
+
+    .chat-container {
+        width: 100%;
+        margin-top: 10px;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .room-selection input,
+    .room-selection #join-room,
+    .join-chat {
+        width: 100%;
+        margin-bottom: 12px;
+        box-sizing: border-box; /* Include padding in width */
+    }
+
+    .user-input {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .user-input input {
+        padding: 12px;
+        width: 100%;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    }
+
+    .user-input button {
+        width: 100%;
+        margin-top: 10px;
+        box-sizing: border-box;
+    }
+
+    .users ul li {
+        font-size: 20px;
+    }
+}
