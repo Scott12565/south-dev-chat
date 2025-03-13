@@ -12,7 +12,7 @@ const sendBtn = document.querySelector('.send-btn');
 const chatBox = document.querySelector('.chat-box');
 
 // using the same url as the server
-const socket = io('http://localhost:3001');
+const socket = io('https://southdevchat.onrender.com');
 
 let currentRoom = ''
 let user = ''
